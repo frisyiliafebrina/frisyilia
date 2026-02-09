@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Kamu 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #ffb6c1, #ffd1dc);
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+  color: #5a1f2b;
+  animation: fadeIn 1s ease;
+}
+
+.slide.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.3em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.3em;
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+/* Animasi masuk */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* LOVE PINK */
+.love {
+  position: absolute;
+  color: #ff4f8b;
+  font-size: 20px;
+  animation: float 7s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(110vh) scale(0.8);
+    opacity: 0;
+  }
+  20% { opacity: 0.8; }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SLIDE 1 -->
+<div class="slide active">
+  <h1>Hai kamu 💗</h1>
+  <p>
+    Ini bukan hal besar.  
+    Cuma pesan kecil yang dibuat dengan niat baik.
+  </p>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide">
+  <h1>Jujur</h1>
+  <p>
+    Kamu itu bukan yang bikin hidup aku ribut,  
+    tapi yang bikin rasanya tenang.
+  </p>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide">
+  <h1>Pelan-pelan</h1>
+  <p>
+    Perasaan ini datangnya santai.  
+    Nggak buru-buru,  
+    tapi betah.
+  </p>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide">
+  <h1>Lucunya</h1>
+  <p>
+    Hal kecil dari kamu  
+    sering jadi alasan aku senyum tanpa sadar.
+  </p>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide">
+  <h1>Nyaman</h1>
+  <p>
+    Aku nyaman sama kamu.  
+    Dan buat aku,  
+    itu sudah cukup berarti.
+  </p>
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide">
+  <h1>Tanpa Ribet</h1>
+  <p>
+    Aku nggak cari yang berlebihan.  
+    Cukup saling jaga  
+    dan tetap mau ada.
+  </p>
+</div>
+
+<!-- SLIDE 7 -->
+<div class="slide">
+  <h1>Kadang</h1>
+  <p>
+    Aku suka mikir,  
+    betapa beruntungnya aku  
+    bisa kenal kamu.
+  </p>
+</div>
+
+<!-- SLIDE 8 -->
+<div class="slide">
+  <h1>Kalau Lelah</h1>
+  <p>
+    Kalau suatu hari capek,  
+    semoga aku bisa jadi tempat  
+    buat kamu berhenti sebentar.
+  </p>
+</div>
+
+<!-- SLIDE 9 -->
+<div class="slide">
+  <h1>Soal Kita</h1>
+  <p>
+    Aku nggak tau ke depannya gimana.  
+    Tapi aku tau,  
+    aku mau jalanin pelan-pelan sama kamu.
+  </p>
+</div>
+
+<!-- SLIDE 10 -->
+<div class="slide">
+  <h1>Sederhana</h1>
+  <p>
+    Nggak perlu kata manis tiap hari.  
+    Cukup saling ngerti  
+    dan tetap peduli.
+  </p>
+</div>
+
+<!-- SLIDE 11 -->
+<div class="slide">
+  <h1>Terima Kasih</h1>
+  <p>
+    Sudah hadir.  
+    Sudah bertahan.  
+    Sudah jadi kamu.
+  </p>
+</div>
+
+<!-- SLIDE 12 -->
+<div class="slide">
+  <h1>Penutup 💕</h1>
+  <p>
+    Semoga setelah ini,  
+    kamu tetap mau ada di hidup aku.  
+    Pelan-pelan, bareng.
+  </p>
+</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+
+/* AUTO SLIDE */
+setInterval(() => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, 4500);
+
+/* LOVE FLOAT */
+function createLove() {
+  const love = document.createElement('div');
+  love.className = 'love';
+  love.innerHTML = '💗';
+  love.style.left = Math.random() * 100 + 'vw';
+  love.style.fontSize = (Math.random() * 22 + 14) + 'px';
+  document.body.appendChild(love);
+
+  setTimeout(() => love.remove(), 7000);
+}
+setInterval(createLove, 400);
+</script>
+
+</body>
+</html>
